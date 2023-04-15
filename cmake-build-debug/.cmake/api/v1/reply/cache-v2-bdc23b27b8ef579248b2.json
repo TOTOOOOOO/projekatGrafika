@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/cmake-build-debug"
+			"value" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -615,7 +615,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika"
+			"value" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1335,7 +1335,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/cmake-build-debug"
+			"value" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/cmake-build-debug"
 		},
 		{
 			"name" : "vladan_grafika_IS_TOP_LEVEL",
@@ -1359,7 +1359,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika"
+			"value" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika"
 		}
 	],
 	"kind" : "cache",

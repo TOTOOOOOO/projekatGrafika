@@ -1,4 +1,4 @@
-# Install script for directory: /home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/libs/glad
+# Install script for directory: /home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/libs/glad
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

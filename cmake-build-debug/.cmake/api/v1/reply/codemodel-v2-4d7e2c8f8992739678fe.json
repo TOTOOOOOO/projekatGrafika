@@ -80,28 +80,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "STB_IMAGE::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-STB_IMAGE-Debug-2c32a0296bb9651f2ceb.json",
+					"jsonFile" : "target-STB_IMAGE-Debug-ca2c7c4eec8a5d9ad465.json",
 					"name" : "STB_IMAGE",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "glad::@394eb3637a8e70cb7dd5",
-					"jsonFile" : "target-glad-Debug-b978c460e6fd5fcab4bb.json",
+					"jsonFile" : "target-glad-Debug-bafada1e2f3b369c7712.json",
 					"name" : "glad",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "imgui::@8273e96cb584335637bd",
-					"jsonFile" : "target-imgui-Debug-f6013dd07953d6bea326.json",
+					"jsonFile" : "target-imgui-Debug-c9d7ad34ef0cad6f4646.json",
 					"name" : "imgui",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "vladan_grafika::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-vladan_grafika-Debug-437cd0c3975569fb1ce2.json",
+					"jsonFile" : "target-vladan_grafika-Debug-8bfff709acce7ef83877.json",
 					"name" : "vladan_grafika",
 					"projectIndex" : 0
 				}
@@ -111,8 +111,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/cmake-build-debug",
-		"source" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika"
+		"build" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/cmake-build-debug",
+		"source" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika"
 	},
 	"version" : 
 	{

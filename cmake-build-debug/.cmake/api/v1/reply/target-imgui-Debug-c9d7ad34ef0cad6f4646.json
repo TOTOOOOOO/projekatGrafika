@@ -74,11 +74,11 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/libs/imgui/include"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/libs/imgui/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/libs/glad/include"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/libs/glad/include"
 				}
 			],
 			"language" : "CXX",

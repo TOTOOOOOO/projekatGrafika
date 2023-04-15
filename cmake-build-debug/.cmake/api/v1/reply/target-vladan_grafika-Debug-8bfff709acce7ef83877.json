@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/vladan_grafika"
+			"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/vladan_grafika"
 		}
 	],
 	"backtrace" : 1,
@@ -98,19 +98,19 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/cmake-build-debug/configuration"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/cmake-build-debug/configuration"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/include"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/libs/glad/include"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/libs/glad/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/matf-racunarska-grafika/Downloads/Vladan/Commit1/vladan_grafika/libs/imgui/include"
+					"path" : "/home/matf-racunarska-grafika/Desktop/Vladan/Commit1/vladan_grafika/libs/imgui/include"
 				}
 			],
 			"language" : "CXX",
