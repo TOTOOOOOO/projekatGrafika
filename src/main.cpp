@@ -49,7 +49,6 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 struct PointLight {
-    glm::vec3 position;
     glm::vec3 ambient;
     glm::vec3 diffuse;
     glm::vec3 specular;
@@ -60,12 +59,9 @@ struct PointLight {
 };
 
 struct ProgramState {
-
     bool ImGuiEnabled = false;
     Camera camera;
     bool CameraMouseMovementUpdateEnabled = true;
-    glm::vec3 backpackPosition = glm::vec3(0.0f);
-    float backpackScale = 1.0f;
     PointLight pointLight;
     ProgramState()
             : camera(glm::vec3(0.0f, 0.0f, 3.0f)) {}
@@ -138,9 +134,6 @@ int main() {
         return -1;
     }
 
-    // tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
-    //stbi_set_flip_vertically_on_load(true);
-
     programState = new ProgramState;
     programState->LoadFromFile("resources/program_state.txt");
     if (programState->ImGuiEnabled) {
@@ -152,8 +145,6 @@ int main() {
     ImGuiIO &io = ImGui::GetIO();
     (void) io;
 
-
-
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330 core");
 
@@ -164,7 +155,6 @@ int main() {
     glEnable(GL_CULL_FACE);
     glCullFace(GL_FRONT);
     glFrontFace(GL_CW);
-
 
     // build and compile shaders
     // -------------------------
@@ -306,7 +296,6 @@ int main() {
     skyboxShader.setInt("skybox", 0);
 
     PointLight& pointLight = programState->pointLight;
-    pointLight.position = glm::vec3(4.0f, 4.0, 0.0);
     pointLight.ambient = glm::vec3(0.1, 0.1, 0.1);
     pointLight.diffuse = glm::vec3(0.6, 0.6, 0.6);
     pointLight.specular = glm::vec3(1.0, 1.0, 1.0);
@@ -322,7 +311,6 @@ int main() {
     shaderBloomFinal.use();
     shaderBloomFinal.setInt("scene", 0);
     shaderBloomFinal.setInt("bloomBlur", 1);
-
 
     // render loop
     // -----------
@@ -374,11 +362,11 @@ int main() {
         // lights settings
         //dirLight
         ourShader.setVec3("dirLight.direction", glm::vec3(-0.2f, -1.0f, -0.3f));
-        ourShader.setVec3("dirLight.ambient", glm::vec3(0.3f));
-        ourShader.setVec3("dirLight.diffuse", glm::vec3(0.3f));
-        ourShader.setVec3("dirLight.specular", glm::vec3(0.2f));
+        ourShader.setVec3("dirLight.ambient", glm::vec3(0.1f));
+        ourShader.setVec3("dirLight.diffuse", glm::vec3(0.15f));
+        ourShader.setVec3("dirLight.specular", glm::vec3(0.2));
         //Point light 1
-        ourShader.setVec3("pointLights[0].position", glm::vec3(0.0f ,0.6f, 0.0f));
+        ourShader.setVec3("pointLights[0].position", glm::vec3(1.25f, 2.35f, 3.95f));
         ourShader.setVec3("pointLights[0].ambient", pointLight.ambient);
         ourShader.setVec3("pointLights[0].diffuse", pointLight.diffuse);
         ourShader.setVec3("pointLights[0].specular", pointLight.specular);
@@ -386,7 +374,7 @@ int main() {
         ourShader.setFloat("pointLights[0].linear", pointLight.linear);
         ourShader.setFloat("pointLights[0].quadratic", pointLight.quadratic);
         //Point light 2
-        ourShader.setVec3("pointLights[1].position", glm::vec3(0.0f ,1.0f, 0.0f));
+        ourShader.setVec3("pointLights[1].position", glm::vec3(-0.9f, 3.0f, 15.4f));
         ourShader.setVec3("pointLights[1].ambient", pointLight.ambient);
         ourShader.setVec3("pointLights[1].diffuse", pointLight.diffuse);
         ourShader.setVec3("pointLights[1].specular", pointLight.specular);
@@ -395,15 +383,13 @@ int main() {
         ourShader.setFloat("pointLights[1].quadratic", pointLight.quadratic);
 
         // render the loaded model
+
         //kuca
         glm::mat4 model1 = glm::mat4(1.0f);
         model1 = glm::translate(model1,glm::vec3(0.0f,-0.5f,0.0f));
         model1 = glm::scale(model1, glm::vec3(1.5f));
         ourShader.setMat4("model", model1);
         Model1.Draw(ourShader);
-
-        if (programState->ImGuiEnabled)
-            DrawImGui(programState);
 
 
         // blur bright fragments with two-pass Gaussian Blur
@@ -433,6 +419,9 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, pingpongColorbuffers[!horizontal]);
         shaderBloomFinal.setFloat("exposure", exposure);
         renderQuad();
+
+        if (programState->ImGuiEnabled)
+            DrawImGui(programState);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -506,20 +495,6 @@ void DrawImGui(ProgramState *programState) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
-
-    {
-        static float f = 0.0f;
-        ImGui::Begin("Hello window");
-        ImGui::Text("Hello text");
-        ImGui::SliderFloat("Float slider", &f, 0.0, 1.0);
-        ImGui::DragFloat3("Backpack position", (float*)&programState->backpackPosition);
-        ImGui::DragFloat("Backpack scale", &programState->backpackScale, 0.05, 0.1, 4.0);
-
-        ImGui::DragFloat("pointLight.constant", &programState->pointLight.constant, 0.05, 0.0, 1.0);
-        ImGui::DragFloat("pointLight.linear", &programState->pointLight.linear, 0.05, 0.0, 1.0);
-        ImGui::DragFloat("pointLight.quadratic", &programState->pointLight.quadratic, 0.05, 0.0, 1.0);
-        ImGui::End();
-    }
 
     {
         ImGui::Begin("Camera info");
